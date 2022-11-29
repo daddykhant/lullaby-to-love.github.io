@@ -143,11 +143,13 @@ mainAudio.addEventListener("ended",() => {
     switch(getType){
         case "repeat":
             nextMusic();
+            playingNow();
             break;
         case "repeat_one":
             mainAudio.currentTime = 0;
             loadMusic(musicIndex);
             playMusic();
+            playingNow();
             break;
         case "shuffle":
             let randIndex = Math.floor((math.random() * allMusic.length) + 1);
